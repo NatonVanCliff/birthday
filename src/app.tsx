@@ -68,12 +68,12 @@ const CountDown = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    font-size: 100px;
+    font-size: 135px;
     @media (max-width: 768px) {
-        font-size: 75px;
+        font-size: 90px;
     }
     @media (max-width: 425px) {
-        font-size: 25px;
+        font-size: 40px;
     }
 `;
 
