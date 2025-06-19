@@ -67,12 +67,19 @@ const CountDown = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    font-size: 100px;
+    @media (max-width: 768px) {
+        font-size: 75px;
+    }
+    @media (max-width: 425px) {
+        font-size: 25px;
+    }
 `;
 
 const ClockDigits = styled.div`
     background-color: #fff;
     font-family: 'Open Sans', sans-serif;
-    font-size: 100px;
     color: #202020;
     border-radius: 5px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
@@ -81,6 +88,5 @@ const ClockDigits = styled.div`
 
 const ClockPoints = styled.span`
     font-weight: bolder;
-    font-size: 100px;
     color: #fff;
 `;

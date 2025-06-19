@@ -28,5 +28,8 @@ const devServer = {
 module.exports = merge(commonConfig, {
     mode: 'development',
     devtool: 'inline-source-map',
+    output: {
+        publicPath: '/'
+    },
     devServer
 });

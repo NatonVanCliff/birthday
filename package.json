@@ -2,7 +2,7 @@
   "name": "birthday",
   "version": "0.0.1",
   "description": "Birthday Countdown",
-  "homepage": "https://natonvancliff.github.io/birthday",
+  "homepage": "natonvancliff.github.io/birthday",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

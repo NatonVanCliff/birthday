@@ -8,7 +8,7 @@ module.exports = {
     entry: path.join(__dirname, '..', 'src', 'index.tsx'),
     output: {
         path: BUILD_DIR,
-        publicPath: '/',
+        publicPath: '/birthday',
         filename: '[name].[contenthash].js',
         clean: true
     },
