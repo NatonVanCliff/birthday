@@ -31,12 +31,12 @@ export const CountdownTimer = () => {
         }
     }, []);
     return (
-        countDown ? <CountDown>
-            <CounterCard value={countDown.days} caption='Days'/>
-            <CounterCard value={countDown.hours} caption='Hours'/>
-            <CounterCard value={countDown.minutes} caption='Minutes'/>
-            <CounterCard value={countDown.seconds} caption='Seconds'/>
-        </CountDown> : null
+        <CountDown>
+            <CounterCard value={countDown?.days} caption='Days'/>
+            <CounterCard value={countDown?.hours} caption='Hours'/>
+            <CounterCard value={countDown?.minutes} caption='Minutes'/>
+            <CounterCard value={countDown?.seconds} caption='Seconds'/>
+        </CountDown>
     );
 }
 

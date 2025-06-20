@@ -2,26 +2,29 @@ import {memo} from "react";
 import styled from "styled-components";
 
 export type CounterCardProps = {
-    value: number;
+    value?: number;
     caption?: string;
 }
 
-export const CounterCard = memo((props: CounterCardProps) => {
-    const value = props.value.toString().padStart(2, '0');
+export const CounterCard = memo(({value, caption}: CounterCardProps) => {
+    const valueNode = value ? <p>{normalize(value)}</p> : null;
+
     return (
         <Container>
             <div className='counter'>
                 <div className='counter_top'>
-                    <p>{value}</p>
+                    {valueNode}
                 </div>
                 <div className='counter_down'>
-                    <p>{value}</p>
+                    {valueNode}
                 </div>
             </div>
-            <p className='caption'>{props.caption}</p>
+            <p className='caption'>{caption}</p>
         </Container>
     );
 });
+
+const normalize = (value: number) => value.toString().padStart(2, '0');
 
 
 const Container = styled.div`
@@ -47,7 +50,7 @@ const Container = styled.div`
         overflow: hidden;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
-    
+
     .counter_top {
         background-color: #45486a;
         top: 0;
@@ -72,11 +75,11 @@ const Container = styled.div`
         text-align: center;
         text-transform: uppercase;
     }
-    
+
     @media (max-width: 430px) {
         width: 65px;
         height: 90px;
-        
+
         .counter {
             height: calc(100% - 10px - 15px);
 
@@ -89,7 +92,7 @@ const Container = styled.div`
                 margin-top: -32px;
             }
         }
-        
+
         .caption {
             margin-top: 10px;
             font-size: 9px;
