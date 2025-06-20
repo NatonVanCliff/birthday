@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const BUILD_DIR = path.resolve(__dirname, '..', 'build');
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
@@ -39,6 +40,11 @@ module.exports = {
         ]
     },
     plugins: [
+        new CopyPlugin({
+            patterns: [
+                {from: path.resolve(PUBLIC_DIR, 'images'), to: "images"}
+            ],
+        }),
         new HtmlWebpackPlugin({
             template: path.join(PUBLIC_DIR, 'index.html'),
             favicon: path.join(PUBLIC_DIR, 'favicon.ico'),
