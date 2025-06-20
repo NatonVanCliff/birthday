@@ -7,7 +7,7 @@ export type CounterCardProps = {
 }
 
 export const CounterCard = memo(({value, caption}: CounterCardProps) => {
-    const valueNode = value ? <p>{normalize(value)}</p> : null;
+    const valueNode = value !== undefined ? <p>{normalize(value)}</p> : null;
 
     return (
         <Container>
@@ -75,36 +75,14 @@ const Container = styled.div`
         text-align: center;
         text-transform: uppercase;
     }
-
-    @media (max-width: 430px) {
-        width: 65px;
-        height: 90px;
-
-        .counter {
-            height: calc(100% - 10px - 15px);
-
-            font-size: 35px;
-            line-height: 65px;
-        }
-
-        .counter_down {
-            p {
-                margin-top: -32px;
-            }
-        }
-
-        .caption {
-            margin-top: 10px;
-            font-size: 9px;
-            line-height: 15px;
-        }
-    }
-
-    @media (max-width: 320px) {
+    
+    @media (max-width: 430px), (max-width: 1024px) and (orientation: landscape) {
         width: 55px;
         height: 75px;
 
         .counter {
+            height: calc(100% - 10px - 15px);
+
             font-size: 35px;
             line-height: 50px;
         }
@@ -113,6 +91,12 @@ const Container = styled.div`
             p {
                 margin-top: -25px;
             }
+        }
+
+        .caption {
+            margin-top: 10px;
+            font-size: 9px;
+            line-height: 15px;
         }
     }
 `;

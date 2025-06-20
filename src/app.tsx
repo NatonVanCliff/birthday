@@ -41,14 +41,15 @@ const Caption = styled.h1`
     }
 
     @media (max-width: 430px) {
-        margin: 80px 0;
-        font-size: 18px;
+        margin: 74px 0;
+        font-size: 15px;
         letter-spacing: 6px;
     }
 
-    @media (max-width: 320px) {
+    @media (max-width: 1024px) and (orientation: landscape)  {
+        margin: 40px 0;
         font-size: 15px;
-        margin: 74px 0;
+        letter-spacing: 6px;
     }
 `;
 
