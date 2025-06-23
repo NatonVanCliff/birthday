@@ -2,12 +2,13 @@ import styled from "styled-components";
 import {CountdownTimer} from "./components/countdown-timer";
 import {Background} from "./components/background";
 import TelegramIcon from "./assets/telegram.svg";
+import {nextAge} from "./utils";
 
 export const App = () => {
     return (
         <Container>
             <Background/>
-            <Caption>33's coming soon</Caption>
+            <Caption>{nextAge()}'s coming soon</Caption>
             <CountdownTimer/>
             <Footer>
                 <a href="https://t.me/naton_van_cliff">

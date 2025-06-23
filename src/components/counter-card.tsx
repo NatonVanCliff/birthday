@@ -2,12 +2,12 @@ import {memo} from "react";
 import styled from "styled-components";
 
 export type CounterCardProps = {
-    value?: number;
+    value: number;
     caption?: string;
 }
 
 export const CounterCard = memo(({value, caption}: CounterCardProps) => {
-    const valueNode = value !== undefined ? <p>{normalize(value)}</p> : null;
+    const valueNode = <p>{normalize(value)}</p>;
 
     return (
         <Container>
@@ -39,7 +39,7 @@ const Container = styled.div`
 
         color: #c25792;
         text-align: center;
-        font-size: 85px;
+        font-size: 75px;
         line-height: 144px;
     }
 
@@ -75,7 +75,7 @@ const Container = styled.div`
         text-align: center;
         text-transform: uppercase;
     }
-    
+
     @media (max-width: 430px), (max-width: 1024px) and (orientation: landscape) {
         width: 55px;
         height: 75px;
@@ -83,7 +83,7 @@ const Container = styled.div`
         .counter {
             height: calc(100% - 10px - 15px);
 
-            font-size: 35px;
+            font-size: 28px;
             line-height: 50px;
         }
 
