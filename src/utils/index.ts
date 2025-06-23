@@ -7,12 +7,14 @@ export type CountTime = {
     seconds: number;
 }
 
-export const calculateTime = (): CountTime => {
+export const nextBirthday = (): number => {
     const currentYear = new Date().getFullYear();
     const birthday = new Date(BIRTHDAY_DATE).setFullYear(currentYear);
-    const nextBirthday = new Date(BIRTHDAY_DATE).setFullYear(currentYear + 1);
+    return birthday > Date.now() ? birthday : new Date(BIRTHDAY_DATE).setFullYear(currentYear + 1)
+}
 
-    const duration: number = (birthday > Date.now() ? birthday : nextBirthday) - Date.now();
+export const calculateTime = (): CountTime => {
+    const duration: number = nextBirthday() - Date.now();
     const days = Math.floor(duration / (1000 * 60 * 60 * 24));
     const hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
@@ -21,6 +23,5 @@ export const calculateTime = (): CountTime => {
 }
 
 export const nextAge = (): number => {
-    const currentYear = new Date().getFullYear();
-    return (new Date(BIRTHDAY_DATE).setFullYear(currentYear) < Date.now() ? 1 : 0) + currentYear - new Date(BIRTHDAY_DATE).getFullYear();
+    return new Date(nextBirthday()).getFullYear() - new Date(BIRTHDAY_DATE).getFullYear();
 }
