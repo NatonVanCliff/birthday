@@ -12,7 +12,7 @@ export const calculateTime = (): CountTime => {
     const birthday = new Date(BIRTHDAY_DATE).setFullYear(currentYear);
     const nextBirthday = new Date(BIRTHDAY_DATE).setFullYear(currentYear + 1);
 
-    const duration: number = birthday > Date.now() ? birthday - Date.now() : nextBirthday - Date.now();
+    const duration: number = (birthday > Date.now() ? birthday : nextBirthday) - Date.now();
     const days = Math.floor(duration / (1000 * 60 * 60 * 24));
     const hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
