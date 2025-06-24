@@ -7,31 +7,6 @@
     background-image: linear-gradient(to top, #795444, #784542, #723746, #652c4f, #4e2759, #3c275b, #26275b, #002759, #002652, #01254b, #042444, #09233d);
 }
 
-.caption {
-    margin: 230px 0 152px 0;
-    color: #fff;
-    font-size: 30px;
-    text-align: center;
-    letter-spacing: 12px;
-    text-transform: uppercase;
-
-    @media (max-width: 768px) {
-        margin: 90px 0;
-    }
-
-    @media (max-width: 430px) {
-        margin: 74px 0;
-        font-size: 15px;
-        letter-spacing: 6px;
-    }
-
-    @media (max-width: 1024px) and (orientation: landscape) {
-        margin: 40px 0;
-        font-size: 15px;
-        letter-spacing: 6px;
-    }
-}
-
 .background {
     position: absolute;
     height: 100%;
