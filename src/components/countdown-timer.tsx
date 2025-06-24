@@ -1,7 +1,7 @@
-import styled from "styled-components";
 import {useEffect, useState} from "react";
 import {CounterCard} from "./counter-card";
 import {calculateTime, CountTime} from "../utils";
+import styled from "./countdown-timer.css";
 
 export const CountdownTimer = () => {
     const [countTime, setCountTime] = useState<CountTime>(calculateTime());
@@ -15,20 +15,11 @@ export const CountdownTimer = () => {
         }
     }, []);
     return (
-        <CountDown>
+        <div className={styled.layout}>
             <CounterCard value={countTime.days} caption='Days'/>
             <CounterCard value={countTime.hours} caption='Hours'/>
             <CounterCard value={countTime.minutes} caption='Minutes'/>
             <CounterCard value={countTime.seconds} caption='Seconds'/>
-        </CountDown>
+        </div>
     );
 }
-
-const CountDown = styled.div`
-    width: fit-content;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-`;

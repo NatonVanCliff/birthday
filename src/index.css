@@ -14,6 +14,6 @@ html, body {
     font-family: 'Red Hat Text', sans-serif;
 }
 
-#root {
+:global(#root) {
     height: 100%;
 }
