@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+
+$mobile-width: 430px;
+$pad-width: 768px;
+$laptop-width: 1440px;
+
+
+$digits-color: #c25792;
+$top-card-color: #45486a;
+$down-card-color: #313358;
+$card-caption-color: #7f82b1;
+
+$back-color-1: #795444;
+$back-color-2: #784542;
+$back-color-3: #723746;
+$back-color-4: #652c4f;
+$back-color-5: #4e2759;
+$back-color-6: #3c275b;
+$back-color-7: #26275b;
+$back-color-8: #002759;
+$back-color-9: #002652;
+$back-color-10: #01254b;
+$back-color-11: #042444;
+$back-color-12: #09233d;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Red Hat Text', sans-serif;
+}
+
+#root {
+    height: 100%;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    background-image: linear-gradient(to top,
+            $back-color-1, $back-color-2, $back-color-3,
+            $back-color-4, $back-color-5, $back-color-6,
+            $back-color-7, $back-color-8, $back-color-9,
+            $back-color-10, $back-color-11, $back-color-12
+    );
+}
+
+.app-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background-image: url(assets/sky.svg), url(assets/mountains.svg);
+    background-position: top, bottom;
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 50vh, 100vw 25vh;
+}
+
+
+footer {
+    color: $card-caption-color;
+    position: absolute;
+    bottom: 6%;
+    text-align: center;
+
+
+    & > a > svg:hover {
+        & > path {
+            fill: $digits-color;
+        }
+    }
+}
+
+
+.timer {
+    &_layout {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &_caption {
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 100px 0 30px 0;
+        font-size: 13px;
+        letter-spacing: 6px;
+    }
+
+    &_card {
+        &_layout {
+            position: relative;
+            color: #ffffff;
+            width: 50px;
+            height: 75px;
+        }
+
+        &_counter {
+            height: calc(100% - 10px - 15px);
+            position: relative;
+            color: $digits-color;
+            text-align: center;
+            font-size: 28px;
+            line-height: 50px;
+
+            &_top, &_down {
+                height: 49.35%;
+                width: 100%;
+                position: absolute;
+                overflow: hidden;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            &_top {
+                background-color: $top-card-color;
+                top: 0;
+                border-radius: 8px 8px 0 0;
+            }
+
+            &_down {
+                background-color: $down-card-color;
+                bottom: 0;
+                border-radius: 0 0 8px 8px;
+
+                & > p {
+                    margin-top: -25px;
+
+                }
+            }
+        }
+
+        &_caption {
+            color: $card-caption-color;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 10px;
+            font-size: 9px;
+            line-height: 15px;
+        }
+    }
+}
+
+@media screen and (min-width: $pad-width) {
+    .timer {
+        &_layout {
+            gap: 40px;
+        }
+
+        &_caption {
+            font-size: 20px;
+            letter-spacing: 10px;
+        }
+
+        &_card {
+            &_layout {
+                width: 90px;
+                height: 115px;
+            }
+
+            &_counter {
+                font-size: 45px;
+                line-height: 90px;
+
+                &_down > p {
+                    margin-top: -45px;
+                }
+            }
+
+            &_caption {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $laptop-width) {
+    .timer {
+        &_caption {
+            margin: 330px 0 50px 0;
+            font-size: 25px;
+            letter-spacing: 13px;
+        }
+
+        &_card {
+            &_layout {
+                width: 120px;
+                height: 145px;
+            }
+
+            &_counter {
+                font-size: 54px;
+                line-height: 120px;
+
+                &_down > p {
+                    margin-top: -60px;
+                }
+            }
+
+            &_caption {
+                font-size: 16px;
+            }
+        }
+    }
+}

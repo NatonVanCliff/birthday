@@ -28,18 +28,8 @@ module.exports = {
                 use: ['ts-loader']
             },
             {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: {
-                                namedExport: false
-                            },
-                        },
-                    },
-                ]
+                test: /\.(css|scss)$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /\.svg$/i,

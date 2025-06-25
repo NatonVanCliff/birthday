@@ -1,5 +1,4 @@
 import {memo} from "react";
-import styled from "./counter-card.css"
 
 export type CounterCardProps = {
     value: number;
@@ -10,16 +9,16 @@ export const CounterCard = memo(({value, caption}: CounterCardProps) => {
     const valueNode = <p>{normalize(value)}</p>;
 
     return (
-        <div className={styled.layout}>
-            <div className={styled.counter}>
-                <div className={styled.counterTop}>
+        <div className='timer_card_layout'>
+            <div className='timer_card_counter'>
+                <div className='timer_card_counter_top'>
                     {valueNode}
                 </div>
-                <div className={styled.counterDown}>
+                <div className='timer_card_counter_down'>
                     {valueNode}
                 </div>
             </div>
-            <p className={styled.caption}>{caption}</p>
+            <p className='timer_card_caption'>{caption}</p>
         </div>
     );
 });

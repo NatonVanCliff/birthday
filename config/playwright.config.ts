@@ -1,4 +1,4 @@
-import {defineConfig, devices} from '@playwright/test';
+import {defineConfig} from '@playwright/test';
 
 export default defineConfig({
     testDir: '../it',
@@ -35,6 +35,14 @@ export default defineConfig({
             use: {
                 browserName: "chromium",
                 viewport: {width: 360, height: 740}
+            }
+        },
+        {
+            name: 'ipad chromium',
+            use: {
+                browserName: "chromium",
+                viewport: {width: 768, height: 1024}
+
             }
         }
     ],

@@ -1,11 +1,10 @@
 import {CountdownTimer} from "./components/countdown-timer";
 import TelegramIcon from "./assets/telegram.svg";
-import style from "./app.css";
 
 export const App = () => {
     return (
-        <main className={style.layout}>
-            <div className={style.background}/>
+        <main>
+            <div className='app-background'/>
             <CountdownTimer />
             <footer>
                 <a href="https://t.me/naton_van_cliff">
